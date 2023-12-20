@@ -1,10 +1,12 @@
 <p>channels works!</p>
 
-<div *ngFor="let channel of this.channel.channelFiltered">
+<div id="channelContainer" *ngFor="let channel of this.channel.channelFiltered">
+<div class="channelCard">
 
     <p>{{channel.name}}</p>
     <p>{{channel.creationDate}}</p>
     <p>{{channel.status}}</p>
+</div>
   
 </div>
 

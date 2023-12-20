@@ -11,7 +11,8 @@ export class UserService {
 
   constructor(private http: FetcherService) { }
 
-  
+  user: User[] = [];
+  userFiltered: User[] = this.user
 
 getUserByIdService(id: number){
   return this.http.getUserById(id);

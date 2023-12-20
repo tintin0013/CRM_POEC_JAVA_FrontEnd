@@ -1,0 +1,11 @@
+#userContainer {
+    display: flex;
+    margin: 10px;
+}
+
+.userCard {
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    border-radius: 5px;
+}

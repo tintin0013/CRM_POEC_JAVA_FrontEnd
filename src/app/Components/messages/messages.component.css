@@ -1,3 +1,18 @@
 body{
     background-color: blueviolet;
 }
+
+#messageContainer {
+    display: flex;
+    margin: 10px;
+    width: 300px;
+}
+
+.messageCard {
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    border-radius: 5px;
+    width: 90%;
+    padding: 10px 0 10px 15px;
+}
