@@ -12,7 +12,7 @@ export class FetcherService {
   constructor(private http: HttpClient){}
   
 
-  // requetes channels
+  // requetes channel
 
   getAllChannels() {
     return this.http.get<Channel[]>("http://localhost:8080/channels");
