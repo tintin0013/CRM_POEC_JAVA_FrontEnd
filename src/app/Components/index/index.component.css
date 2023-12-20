@@ -5,6 +5,8 @@
     overflow: hidden;
 }
 
+
+/*
 .circles{
     position: absolute;
     top: 0;
@@ -23,6 +25,7 @@
     animation: animate 25s linear infinite;
     bottom: -150px;
 }
+
 .circles li:nth-child(1){
     left: 25%;
     width: 80px;
@@ -99,4 +102,4 @@
         opacity: 0;
         border-radius: 50%;
     }
-}
+}*/
