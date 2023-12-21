@@ -14,12 +14,48 @@ import { MessageService } from '../../Services/message.service';
 })
 export class ChannelsComponent {
 
-  constructor(public channel: ChannelService, public message: MessageService){}
+  constructor(public channel: ChannelService, public message: MessageService){
+    
+  }
 
   selectChannel(channel: Channel){
 console.log(channel)
     this.channel.currentChannel = channel;
     this.message.chargeMessages();
   }
+
+  modification: boolean = false;
+
+  suppression(channel: Channel){
+    this.channel.deleteChannelService(channel.id).subscribe((channel) => {
+      this.channel.chargeChannels()
+    })
+  }
+
+  modifier(channel: Channel){
+    if(!this.modification){
+this.modification = true
+    }else{
+      this.modification = false;
+      this.channel.updateChannelService(channel).subscribe((channel) => {
+        this.channel.chargeChannels()
+      })
+    }
+   
+  }
+
+
+  creerChannel(){
+   const baseChannel: Channel = {
+      id: 0,
+      name : "default",
+      creationDate : new Date(),
+      status : 1,
+    }
+    this.channel.postChannelService(baseChannel).subscribe((channel) => {
+      this.channel.chargeChannels()
+    })
+  }
+
 
 }

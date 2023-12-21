@@ -1,8 +1,10 @@
 <h5>Channels</h5>
-<div id="channelContainer" *ngFor="let channel of this.channel.channelFiltered">
+<div id="channelContainer" *ngFor="let channel of this.channel.channelFiltered" (click)="selectChannel(channel)">
   <div class="card mb-1 bg-dark border-end-0 border-primary-subtle" style="width: 18rem">
     <div class="card-body" >
       <h5 class="card-title text-primary">{{ channel.name }}</h5>
+      <input *ngIf="modification" type="text" [(ngModel)]="channel.name">
+
       <h6 class="card-subtitle mb-2 text-light">
         {{ channel.creationDate }}
       </h6>
@@ -10,9 +12,12 @@
      
       <!--<a href="#" class="card-link">Card link</a>-->
     </div>
-    <button type="button" class="btn btn-warning" (click)="selectChannel(channel)" >XXXXXXX</button>
+
+    <button (click)="suppression(channel)">Supprimer</button>
+    <button (click)="modifier(channel)" >Modifier</button>
   </div>
 </div>
+<button (click)="creerChannel()">Create Channel</button>
   <!--<div class="channelCard">
     <span class="spanClose">X</span>
   </div>-->

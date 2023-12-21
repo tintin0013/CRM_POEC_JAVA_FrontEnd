@@ -13,6 +13,9 @@
         <p>{{message.dateMessage}}</p>
         <p>{{message.status}}</p>
         <h3>{{message.message}}</h3>
+        <input *ngIf="modification" type="text" [(ngModel)]="message.message">
+        <button (click)="suppression(message)">Supprimer</button>
+        <button (click)="modifier(message)" >Modifier</button>
     </div>
 
 </div>

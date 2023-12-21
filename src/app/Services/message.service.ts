@@ -23,7 +23,7 @@ export class MessageService {
       this.messageFiltered = this.message.filter((message) =>{
         console.log(this.channel.currentChannel, "currentchannel");
         console.log(message.channel, "channel")
-        return message.channel === this.channel.currentChannel
+        return message.channel.id === this.channel.currentChannel.id
 
     });
       console.log(this.messageFiltered);
