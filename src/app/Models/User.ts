@@ -4,6 +4,6 @@ export interface User {
     id: number;
     firstName: string;
     lastName: string;
-    nickName: string;
+    nickname: string;
     status: UserStatus;
 }

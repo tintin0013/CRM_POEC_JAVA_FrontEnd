@@ -1,11 +1,13 @@
 
-<p>Messages-component</p>
+
 
 <div id="messageContainer" *ngFor="let message of this.message.messageFiltered">
 
     <div class="messageCard">
 
         <p>{{message.user}}</p>
+        <!-- <p>{{user}}</p>
+        <p>{{user.nickname}}</p> -->
         <p>{{message.channel}}</p>
         <p>{{message.dateMessage}}</p>
         <p>{{message.status}}</p>

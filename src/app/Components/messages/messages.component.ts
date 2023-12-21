@@ -3,6 +3,8 @@ import { MessageService } from '../../Services/message.service';
 import { CommonModule } from '@angular/common';
 import { FetcherService } from '../../Services/fetcher.service';
 import { FormsModule } from '@angular/forms';
+import { UserService } from '../../Services/user.service';
+import { ChannelService } from '../../Services/channel.service';
 
 @Component({
   selector: 'app-messages',
@@ -13,6 +15,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class MessagesComponent {
 
-  constructor(public message: MessageService) {}
+  constructor(public message: MessageService,public user: UserService, public channel: ChannelService) { console.log(user)}
 
 }

@@ -17,6 +17,8 @@ export class UserComponent {
 
   constructor(public user: UserService,
     // public message: MessageService, public channel: ChannelService
-     ) {}
+     ) {
+      console.log(user)
+     }
 
 }

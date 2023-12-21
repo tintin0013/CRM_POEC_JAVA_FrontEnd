@@ -1,15 +1,30 @@
 #channelContainer {
     display: flex;
-    margin: 10px;
-    width: 300px;
+
+    width: 240px;
+
 }
 
 .channelCard {
     display: flex;
     flex-direction: column;
-    border: solid black 1px;
+    border: solid white 1px;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
   
     border-radius: 5px;
-    width: 80%;
+    width: 100%;
     padding: 10px 0 10px 15px;
+}
+
+.spanClose {
+position: relative;
+left: 90%;
+color: rgb(154, 148, 148);
+transition: 0.3s;
+}
+.spanClose:hover {
+    color: rgb(175, 15, 15);
+    transition: 0.3s;
 }

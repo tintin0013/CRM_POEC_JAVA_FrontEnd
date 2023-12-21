@@ -9,10 +9,20 @@ import { FetcherService } from './fetcher.service';
 })
 export class UserService {
 
-  constructor(private http: FetcherService) { }
+  constructor(private http: FetcherService) { 
+    this.chargeUsers()
+  }
 
   user: User[] = [];
-  userFiltered: User[] = this.user
+userFiltered: User[] = this.user;
+
+  chargeUsers() {
+    this.http.getAllUsers().subscribe((data: User[]) => {
+      this.user = data;
+      this.userFiltered = this.user;
+    })
+  }
+
 
 getUserByIdService(id: number){
   return this.http.getUserById(id);
@@ -29,4 +39,7 @@ updateUserService(user: User) {
 deleteUserService(id: number) {
   return this.http.deleteUser(id);
 }
+
 }
+
+
