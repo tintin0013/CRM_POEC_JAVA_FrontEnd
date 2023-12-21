@@ -37,7 +37,10 @@ console.log(this.messageContent)
     channel: this.channel.currentChannel!,
     status: 0
 }
-this.message.postMessageService(message).subscribe()
+this.message.postMessageService(message).subscribe((data) => {
+  this.message.chargeMessages()
+})
+this.messageContent.replace
 }
 
 

@@ -3,13 +3,15 @@ import { Message } from '../Models/Message';
 import { MessageStatus } from '../Models/MessageStatus';
 import { HttpClient } from '@angular/common/http';
 import { FetcherService } from './fetcher.service';
+import { ChannelService } from './channel.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
 
-  constructor(private http: FetcherService) { 
+  constructor(private http: FetcherService, public channel: ChannelService) { 
     this.chargeMessages();
   }
 
@@ -18,7 +20,9 @@ export class MessageService {
     this.http.getAllMessages().subscribe((data: Message[]) => {
       this.message = data;
       console.log(this.message)
-      this.messageFiltered = this.message;
+      this.messageFiltered = this.message.filter((message) => {
+        message.channel == this.channel.currentChannel
+      });
     })
   }
 

@@ -23,7 +23,7 @@ export class FetcherService {
   }
 
   postChannel(channel: Channel) {
-    return this.http.post("http://localhost:8080/channels/", channel)
+    return this.http.post("http://localhost:8080/channels", channel)
   }
 
   updateChannel(channel: Channel) {
@@ -46,7 +46,7 @@ export class FetcherService {
   }
 
   postMessage(message: Message) {
-    return this.http.post("http://localhost:8080/messages/", message)
+    return this.http.post("http://localhost:8080/messages", message)
   }
 
   updateMessage(message: Message) {
@@ -69,7 +69,7 @@ export class FetcherService {
   }
 
   postUser(user: User) {
-    return this.http.post("http://localhost:8080/users/", user)
+    return this.http.post("http://localhost:8080/users", user)
   }
 
   updateUser(user: User) {
