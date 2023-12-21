@@ -15,4 +15,13 @@ import { FooterComponent } from '../footer/footer.component';
 })
 export class MainMessagesComponent {
 
+  constructor(){}
+
+
+  recupDate(){
+   let date = new Date();
+    console.log(date)
+
+  }
+
 }
