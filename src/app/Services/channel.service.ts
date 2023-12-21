@@ -18,10 +18,11 @@ export class ChannelService {
     this.http.getAllChannels().subscribe((data: Channel[]) => {
       this.channel = data;
       this.channelFiltered = this.channel;
+      console.log(data)
     })
   }
 
-
+currentChannel: Channel|undefined;
 channel: Channel[] = [];
 channelFiltered: Channel[] = this.channel;
 

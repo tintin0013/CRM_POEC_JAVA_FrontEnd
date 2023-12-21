@@ -1,4 +1,4 @@
-#channelContainer {
+/* #channelContainer {
     display: flex;
 
     width: 240px;
@@ -27,4 +27,4 @@ transition: 0.3s;
 .spanClose:hover {
     color: rgb(175, 15, 15);
     transition: 0.3s;
-}
+} */

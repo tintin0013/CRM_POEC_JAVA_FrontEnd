@@ -1,14 +1,16 @@
 <h5>Channels</h5>
 <div id="channelContainer" *ngFor="let channel of this.channel.channelFiltered">
   <div class="card mb-1 bg-dark border-end-0 border-primary-subtle" style="width: 18rem">
-    <div class="card-body">
+    <div class="card-body" >
       <h5 class="card-title text-primary">{{ channel.name }}</h5>
       <h6 class="card-subtitle mb-2 text-light">
         {{ channel.creationDate }}
       </h6>
       <p class="card-text text-primary">{{ channel.status }}</p>
+     
       <!--<a href="#" class="card-link">Card link</a>-->
     </div>
+    <button type="button" class="btn btn-warning" (click)="selectChannel(channel)" >XXXXXXX</button>
   </div>
 </div>
   <!--<div class="channelCard">

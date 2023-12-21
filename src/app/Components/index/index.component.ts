@@ -20,6 +20,7 @@ export class IndexComponent {
   }
   nom: string = "";
 
+
   onClick( ){
  
     if( this.nom == ""){

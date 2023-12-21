@@ -5,7 +5,7 @@
     <div class="row">
       <!-- ASIDE -->
       <div class="col-md-2 d-none d-md-block bg-dark sidebar">
-        <app-aside></app-aside>
+       <app-channels></app-channels>
       </div>
   
       <!-- MAIN -->
@@ -15,16 +15,14 @@
           <!--On appel le component product qui se trouve dans product-component.ts-->
         </div>
 
+        <div class="newMessage">
+          <form id="messageForm" (submit)="getNewMessage()">
+            <label>New Message</label>
+            <textarea name="newMessage"  cols="30" rows="10"  [(ngModel)]="messageContent"></textarea>
+            <button class="btn-warning" type="submit"  >Ajouter un Message</button>
+          </form>
+        </div>
       </div>
-    </div>
-    <div class="newMessage">
-      <form action="">
-        <input type="text" name="">
-        <input type="hidden" name="" value="">
-        <input type="hidden" name="">
-        <input type="hidden" name="">
-      </form>
-
     </div>
   </div>
   <app-footer></app-footer>
