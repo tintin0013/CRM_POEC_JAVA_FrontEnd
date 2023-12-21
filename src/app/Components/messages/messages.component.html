@@ -5,10 +5,11 @@
 
     <div class="messageCard">
 
-        <p>{{message.user}}</p>
-        <!-- <p>{{user}}</p>
-        <p>{{user.nickname}}</p> -->
-        <p>{{message.channel}}</p>
+       
+         <!-- <input type="hidden" name="idUser" value="{{message.user}}">
+         <p *ngFor="let dataUser of this.user.getUserByIdService"></p> -->
+        <p>{{message.user.nickname}}</p> 
+        <p>{{message.channel.name}}</p>
         <p>{{message.dateMessage}}</p>
         <p>{{message.status}}</p>
         <h3>{{message.message}}</h3>

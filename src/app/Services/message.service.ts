@@ -17,6 +17,7 @@ export class MessageService {
   chargeMessages() {
     this.http.getAllMessages().subscribe((data: Message[]) => {
       this.message = data;
+      console.log(this.message)
       this.messageFiltered = this.message;
     })
   }

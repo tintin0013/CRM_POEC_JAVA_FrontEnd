@@ -15,6 +15,7 @@ import { ChannelService } from '../../Services/channel.service';
 })
 export class MessagesComponent {
 
-  constructor(public message: MessageService,public user: UserService, public channel: ChannelService) { console.log(user)}
+  constructor(public message: MessageService,public user: UserService, public channel: ChannelService) 
+  {console.log(this.message.messageFiltered)}
 
 }
