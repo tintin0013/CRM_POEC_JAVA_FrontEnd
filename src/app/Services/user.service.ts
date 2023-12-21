@@ -13,6 +13,7 @@ export class UserService {
     this.chargeUsers()
   }
 
+  currentUser: User|undefined;
   user: User[] = [];
 userFiltered: User[] = this.user;
 

@@ -1,2 +1,4 @@
-<router-outlet></router-outlet>
+<app-index *ngIf="!this.user.currentUser" ></app-index>
+<app-main-messages *ngIf="this.user.currentUser"></app-main-messages>
+
 

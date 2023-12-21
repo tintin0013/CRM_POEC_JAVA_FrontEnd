@@ -27,8 +27,8 @@
         </li>
       </ul>
       <form class="d-flex " role="search">
-        <h6 class="text-primary mt-3 mx-5">Nom du gars</h6>
-        <button class="btn btn-outline-primary m-2" type="submit">
+        <h6 class="text-primary mt-3 mx-5">{{this.user.currentUser?.nickname}}</h6>
+        <button class="btn btn-outline-primary m-2" (click)="deconnexion()" type="submit">
           Se déconnecter
         </button>
       </form>

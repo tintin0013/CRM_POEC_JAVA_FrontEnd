@@ -5,9 +5,9 @@ import { MainChannelsComponent } from './Components/main-channels/main-channels.
 import { MainUserComponent } from './Components/main-user/main-user.component';
 
 export const routes: Routes = [
-    { path: '', component: IndexComponent },
-    { path: 'messages', component: MainMessagesComponent},
-    { path: 'channels', component: MainChannelsComponent},
-    { path: 'user', component: MainUserComponent}
+    // { path: '', component: IndexComponent },
+    // { path: 'messages', component: MainMessagesComponent},
+    // { path: 'channels', component: MainChannelsComponent},
+    // { path: 'user', component: MainUserComponent}
     
 ];

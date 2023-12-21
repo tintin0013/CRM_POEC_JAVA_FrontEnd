@@ -18,10 +18,10 @@
       <div class="col-5">
       </div>
       <div class="col-2 ">
-          <form class="bg-primary">
+          <form class="bg-primary" (submit)="onClick()">
               <label class="form-label m-3"><h5>Votre Nom</h5></label>
-              <input type="text" name="inputCo" class="form-control" aria-describedby="emailHelp" />
-            <button class="btn btn-outline-light bg-dark text-primary m-3" type="submit">Se connecter</button>
+              <input type="text" name="inputCo" class="form-control" aria-describedby="emailHelp" [(ngModel)] = "this.nom"/>
+            <button  class="btn btn-outline-light bg-dark text-primary m-3" type="submit">Se connecter</button>
 
           </form>
       </div>

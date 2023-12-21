@@ -12,5 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   constructor( public user: UserService){}
-
+deconnexion(){
+  this.user.currentUser = undefined
+}
 }
