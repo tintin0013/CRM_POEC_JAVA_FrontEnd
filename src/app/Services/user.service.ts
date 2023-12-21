@@ -9,7 +9,7 @@ import { FetcherService } from './fetcher.service';
 })
 export class UserService {
 
-  constructor(private http: FetcherService) { 
+  constructor(private http: FetcherService) {
     this.chargeUsers()
   }
 

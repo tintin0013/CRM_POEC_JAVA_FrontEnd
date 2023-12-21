@@ -78,7 +78,7 @@ export class FetcherService {
 
   deleteUser(id: number) {
     return this.http.delete("http://localhost:8080/users/" + id)
-  }  
+  }
 
 
 

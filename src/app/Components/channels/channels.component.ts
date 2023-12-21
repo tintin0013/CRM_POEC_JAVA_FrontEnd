@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FetcherService } from '../../Services/fetcher.service';
 import { FormsModule } from '@angular/forms';
 import { Channel } from '../../Models/Channel';
+import { MessageService } from '../../Services/message.service';
 @Component({
   selector: 'app-channels',
   standalone: true,
@@ -13,11 +14,12 @@ import { Channel } from '../../Models/Channel';
 })
 export class ChannelsComponent {
 
-  constructor(public channel: ChannelService){}
+  constructor(public channel: ChannelService, public message: MessageService){}
 
   selectChannel(channel: Channel){
 console.log(channel)
     this.channel.currentChannel = channel;
+    this.message.chargeMessages();
   }
 
 }
