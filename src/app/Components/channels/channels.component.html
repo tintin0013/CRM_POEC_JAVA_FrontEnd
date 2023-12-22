@@ -10,7 +10,7 @@
                         : "dd MMM yyyy" }}
                     </p>
                     <input *ngIf="modification" type="text" [(ngModel)]="channel.name" />
-                    <p class="card-text text-primary" style=" --bs-text-opacity: .8;"><small><small>{{ channel.status
+                    <p hidden class="card-text text-primary" style=" --bs-text-opacity: .8;"><small><small>{{ channel.status
                                 }}</small></small></p>
                 </div>
                 <div class="container mx-auto">
