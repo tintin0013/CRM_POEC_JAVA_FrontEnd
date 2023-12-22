@@ -9,15 +9,15 @@ import { Channel } from '../Models/Channel';
 })
 export class FetcherService {
 
-  constructor(private http: HttpClient){}
-  
+  constructor(private http: HttpClient) { }
+
 
   // requetes channel
 
   getAllChannels() {
     return this.http.get<Channel[]>("http://localhost:8080/channels");
   }
-  
+
   getChannelById(id: number) {
     return this.http.get<Channel>("http://localhost:8080/channels/" + id);
   }
@@ -40,7 +40,7 @@ export class FetcherService {
   getAllMessages() {
     return this.http.get<Message[]>("http://localhost:8080/messages");
   }
-  
+
   getMessageById(id: number) {
     return this.http.get<Message>("http://localhost:8080/messages/" + id);
   }
@@ -63,7 +63,7 @@ export class FetcherService {
   getAllUsers() {
     return this.http.get<User[]>("http://localhost:8080/users");
   }
-  
+
   getUserById(id: number) {
     return this.http.get<User>("http://localhost:8080/users/" + id);
   }

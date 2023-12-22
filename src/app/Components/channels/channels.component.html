@@ -1,47 +1,27 @@
 <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark fixed-top mt-5">
-  <div
-    class="d-flex channelContainer flex-column align-items-center align-items-sm-start px-1 pt-2 text-white min-vh-100"
-  >
     <div
-      class="mt-1"
-      id="channelContainer"
-      *ngFor="let channel of this.channel.channelFiltered"
-      (click)="selectChannel(channel)"
-    >
-      <div
-        class="card mt-2 bg-dark border-end-0 border-primary"
-        style="width: 20rem; --bs-bg-opacity: .9;"
-      >
-        <div class="card-body">
-          <h5 class="card-title text-primary">{{ channel.name }}</h5>
-          <p class="card-subtitle text-light"  style=" --bs-text-opacity: .8;">            {{ channel.creationDate | date : "dd MMM yyyy" }}
-          </p>
-          <input *ngIf="modification" type="text" [(ngModel)]="channel.name" />
-          <p class="card-text text-primary"         style=" --bs-text-opacity: .8;"
-          ><small><small>{{ channel.status }}</small></small></p>
-          <!--<a href="#" class="card-link">Card link</a>-->
+        class="d-flex channelContainer flex-column align-items-center align-items-sm-start px-1 pt-2 text-white min-vh-100">
+        <div class="mt-1" id="channelContainer" *ngFor="let channel of this.channel.channelFiltered"
+            (click)="selectChannel(channel)">
+            <div class="card mt-2 bg-dark border-end-0 border-primary" style="width: 20rem; --bs-bg-opacity: .9;">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{ channel.name }}</h5>
+                    <p class="card-subtitle text-light" style=" --bs-text-opacity: .8;"> {{ channel.creationDate | date
+                        : "dd MMM yyyy" }}
+                    </p>
+                    <input *ngIf="modification" type="text" [(ngModel)]="channel.name" />
+                    <p class="card-text text-primary" style=" --bs-text-opacity: .8;"><small><small>{{ channel.status
+                                }}</small></small></p>
+                </div>
+                <div class="container mx-auto">
+                    <button class="btn btn-outline-light text-primary m-1" (click)="suppression(channel)">
+                        Supprimer
+                    </button>
+                    <button class="btn btn-outline-primary text-light m-1" (click)="modifier(channel)">
+                        Modifier
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="container mx-auto">
-          <button
-            class="btn btn-outline-light text-primary m-1"
-            (click)="suppression(channel)"
-          >
-            Supprimer
-          </button>
-          <button
-            class="btn btn-outline-primary text-light m-1"
-            (click)="modifier(channel)"
-          >
-            Modifier
-          </button>
-        </div>
-      </div>
     </div>
-    <!--  <button
-      class="btn btn-outline-primary text-light mt-2"
-      (click)="creerChannel()"
-    >
-      Create Channel
-    </button>-->
-  </div>
 </div>

@@ -11,8 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  constructor( public user: UserService){}
-deconnexion(){
-  this.user.currentUser = undefined
-}
+  constructor(public user: UserService) { }
+  deconnexion() {
+    this.user.currentUser = undefined
+  }
 }

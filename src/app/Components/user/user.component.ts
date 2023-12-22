@@ -9,7 +9,7 @@ import { ChannelService } from '../../Services/channel.service';
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [CommonModule,FormsModule ],
+  imports: [CommonModule, FormsModule],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
@@ -17,8 +17,6 @@ export class UserComponent {
 
   constructor(public user: UserService,
     // public message: MessageService, public channel: ChannelService
-     ) {
-      console.log(user)
-     }
-
+  ) {
+  }
 }

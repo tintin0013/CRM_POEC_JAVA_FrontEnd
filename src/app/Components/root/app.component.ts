@@ -11,11 +11,11 @@ import { MainMessagesComponent } from '../main-messages/main-messages.component'
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, NavbarComponent,IndexComponent,FormsModule,MainMessagesComponent],
+  imports: [CommonModule, RouterOutlet, NavbarComponent, IndexComponent, FormsModule, MainMessagesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'slackLiteFront';
-  constructor(public user: UserService){}
+  constructor(public user: UserService) { }
 }

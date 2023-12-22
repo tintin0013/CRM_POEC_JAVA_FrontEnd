@@ -13,9 +13,9 @@ export class UserService {
     this.chargeUsers()
   }
 
-  currentUser: User|undefined;
+  currentUser: User | undefined;
   user: User[] = [];
-userFiltered: User[] = this.user;
+  userFiltered: User[] = this.user;
 
   chargeUsers() {
     this.http.getAllUsers().subscribe((data: User[]) => {
@@ -24,23 +24,21 @@ userFiltered: User[] = this.user;
     })
   }
 
+  getUserByIdService(id: number) {
+    return this.http.getUserById(id);
+  }
 
-getUserByIdService(id: number){
-  return this.http.getUserById(id);
-}
+  postUserService(user: User) {
+    return this.http.postUser(user);
+  }
 
-postUserService(user: User) {
-  return this.http.postUser(user);
-}
+  updateUserService(user: User) {
+    return this.http.updateUser(user);
+  }
 
-updateUserService(user: User) {
-  return this.http.updateUser(user);
-}
-
-deleteUserService(id: number) {
-  return this.http.deleteUser(id);
-}
-
+  deleteUserService(id: number) {
+    return this.http.deleteUser(id);
+  }
 }
 
 

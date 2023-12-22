@@ -17,43 +17,42 @@ import { Channel } from '../../Models/Channel';
 @Component({
   selector: 'app-main-messages',
   standalone: true,
-  imports: [CommonModule,HeaderComponent, AsideComponent, MessagesComponent,FooterComponent,FormsModule,ChannelsComponent],
+  imports: [CommonModule, HeaderComponent, AsideComponent, MessagesComponent, FooterComponent, FormsModule, ChannelsComponent],
   templateUrl: './main-messages.component.html',
   styleUrl: './main-messages.component.css'
 })
 export class MainMessagesComponent {
 
- messageContent: string = "";
+  messageContent: string = "";
 
   constructor(public user: UserService, public channel: ChannelService, public message: MessageService
-    ){}
+  ) { }
 
-getNewMessage(){
-console.log(this.messageContent)
-   const message: Message = {
-    id: 0,
-    message: this.messageContent,
-    dateMessage: new Date(),
-    user: this.user.currentUser!,
-    channel: this.channel.currentChannel!,
-    status: 0
-}
-this.message.postMessageService(message).subscribe((data) => {
-  this.message.chargeMessages()
-})
-this.messageContent.replace
-}
+  getNewMessage() {
 
-creerChannel(){
-  const baseChannel: Channel = {
-     id: 0,
-     name : "default",
-     creationDate : new Date(),
-     status : 1,
-   }
-   this.channel.postChannelService(baseChannel).subscribe((channel) => {
-     this.channel.chargeChannels()
-   })
- }
+    const message: Message = {
+      id: 0,
+      message: this.messageContent,
+      dateMessage: new Date(),
+      user: this.user.currentUser!,
+      channel: this.channel.currentChannel!,
+      status: 0
+    }
+    this.message.postMessageService(message).subscribe((data) => {
+      this.message.chargeMessages()
+    })
+    this.messageContent = ""  }
+
+  creerChannel() {
+    const baseChannel: Channel = {
+      id: 0,
+      name: "default",
+      creationDate: new Date(),
+      status: 1,
+    }
+    this.channel.postChannelService(baseChannel).subscribe((channel) => {
+      this.channel.chargeChannels()
+    })
+  }
 
 }

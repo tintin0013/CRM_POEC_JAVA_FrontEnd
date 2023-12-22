@@ -11,44 +11,35 @@ import { ChannelService } from './channel.service';
 })
 export class MessageService {
 
-  constructor(private http: FetcherService, public channel: ChannelService) { 
+  constructor(private http: FetcherService, public channel: ChannelService) {
     this.chargeMessages();
   }
-
 
   chargeMessages() {
     this.http.getAllMessages().subscribe((data: Message[]) => {
       this.message = data;
-      console.log(this.message)
-      this.messageFiltered = this.message.filter((message) =>{
-        console.log(this.channel.currentChannel, "currentchannel");
-        console.log(message.channel, "channel")
+      this.messageFiltered = this.message.filter((message) => {
         return message.channel.id === this.channel.currentChannel.id
-
-    });
-      console.log(this.messageFiltered);
-
+      });
     })
   }
-
 
   message: Message[] = [];
   messageFiltered: Message[] = this.message;
 
-  getMessageByIdService(id: number){
+  getMessageByIdService(id: number) {
     return this.http.getMessageById(id);
   }
-  
+
   postMessageService(message: Message) {
     return this.http.postMessage(message);
   }
-  
+
   updateMessageService(message: Message) {
     return this.http.updateMessage(message);
   }
-  
+
   deleteMessageService(id: number) {
     return this.http.deleteMessage(id);
   }
-
 }
