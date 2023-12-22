@@ -25,6 +25,7 @@ export class IndexComponent {
       if (currentUser) {
         this.user.currentUser = currentUser
       }
+      this.nom = ""
     }
   }
 }
