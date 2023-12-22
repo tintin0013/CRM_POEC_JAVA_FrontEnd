@@ -11,6 +11,7 @@ import { UserService } from '../../Services/user.service';
 import { ChannelService } from '../../Services/channel.service';
 import { ChannelsComponent } from '../channels/channels.component';
 import { Message } from '../../Models/Message';
+import { Channel } from '../../Models/Channel';
 
 
 @Component({
@@ -43,5 +44,16 @@ this.message.postMessageService(message).subscribe((data) => {
 this.messageContent.replace
 }
 
+creerChannel(){
+  const baseChannel: Channel = {
+     id: 0,
+     name : "default",
+     creationDate : new Date(),
+     status : 1,
+   }
+   this.channel.postChannelService(baseChannel).subscribe((channel) => {
+     this.channel.chargeChannels()
+   })
+ }
 
 }

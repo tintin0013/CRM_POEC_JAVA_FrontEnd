@@ -45,7 +45,7 @@ this.modification = true
   }
 
 
-  creerChannel(){
+/*  creerChannel(){
    const baseChannel: Channel = {
       id: 0,
       name : "default",
@@ -55,7 +55,7 @@ this.modification = true
     this.channel.postChannelService(baseChannel).subscribe((channel) => {
       this.channel.chargeChannels()
     })
-  }
+  }*/
 
 
 }

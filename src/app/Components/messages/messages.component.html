@@ -1,21 +1,54 @@
+<div class="row  px-5 mt-2">
+  <div class="mt-3">
+    <div
+      id="messageContainer"
+      *ngFor="let message of this.message.messageFiltered"
+    >
+    <label for="inputMessage" id="inputLabel" class="form-label"><small><b> {{ message.user.nickname }} </b></small></label>
+    <span for="inputMessage" class="form-text text-light"><small> -<small> {{ message.channel.name }}</small></small></span>
 
+    <div class="input-group">
+        <span class="bg-primary-subtle text-primary input-group-text">
+            <small
+              ><small>{{
+                message.dateMessage | date : "dd MMM yyyy à h:mm:ss"
+              }}</small></small
+            ></span>
+    
+        <!--  <small> {{ message.status }}</small>-->
+        <textarea
+          class="form-control bg-dark text-primary"
+          style="--bs-bg-opacity: .95;"
+          aria-label="With textarea"
+          id="inputMessage"
+          >{{ message.message }}</textarea
+        >
+        <span class="bg-primary-subtle input-group-text">
+          <input
+            class="bg-primary text-light me-2"
+            *ngIf="modification"
+            type="text"
+            [(ngModel)]="message.message"
+          />
 
+          <button
+            class="btn btn-outline-dark bg-primary text-light me-3"
+            style="--bs-bg-opacity: .9;"
+            (click)="modifier(message)"
+          >
+            Modifier
+          </button>
+          <button
+            class="btn btn-outline-primary bg-dark text-primary"
+            style="--bs-bg-opacity: .9;"
+            (click)="suppression(message)"
+          >
+            Supprimer
+          </button>
+        </span>
 
-<div id="messageContainer" *ngFor="let message of this.message.messageFiltered">
+      </div>
 
-    <div class="messageCard">
-
-       
-         <!-- <input type="hidden" name="idUser" value="{{message.user}}">
-         <p *ngFor="let dataUser of this.user.getUserByIdService"></p> -->
-        <p>{{message.user.nickname}}</p> 
-        <p>{{message.channel.name}}</p>
-        <p>{{message.dateMessage}}</p>
-        <p>{{message.status}}</p>
-        <h3>{{message.message}}</h3>
-        <input *ngIf="modification" type="text" [(ngModel)]="message.message">
-        <button (click)="suppression(message)">Supprimer</button>
-        <button (click)="modifier(message)" >Modifier</button>
     </div>
-
+  </div>
 </div>

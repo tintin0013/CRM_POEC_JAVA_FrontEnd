@@ -16,7 +16,9 @@ import { Message } from '../../Models/Message';
 })
 export class MessagesComponent {
 
-  constructor(public message: MessageService,public user: UserService, public channel: ChannelService) 
+  messageContent: string = "";
+
+  constructor(public message: MessageService,public user: UserService, public channel: ChannelService)
   {console.log(this.message.messageFiltered)}
   modification: boolean = false;
 
@@ -38,6 +40,20 @@ this.modification = true
    
   }
   
-
+  getNewMessage(){
+    console.log(this.messageContent)
+       const message: Message = {
+        id: 0,
+        message: this.messageContent,
+        dateMessage: new Date(),
+        user: this.user.currentUser!,
+        channel: this.channel.currentChannel!,
+        status: 0
+    }
+    this.message.postMessageService(message).subscribe((data) => {
+      this.message.chargeMessages()
+    })
+    this.messageContent.replace
+    }
 
 }

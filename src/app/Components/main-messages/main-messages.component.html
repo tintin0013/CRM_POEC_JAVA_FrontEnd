@@ -1,28 +1,61 @@
 <app-header></app-header>
 
-
 <div class="container-fluid">
+  <div class="row">
+    <!-- ASIDE -->
+    <div class="col d-none d-md-block bg-dark sidebar">
+      <app-channels></app-channels>
+    </div>
+    <!-- MAIN -->
+    <div class="coL ml-sm-auto col-lg-10 mt-5 mb-5">
+      <app-messages> </app-messages>
+    </div>
+  </div>
+</div>
+<!--FOOTER-->
+<div class="fixed-bottom bg-dark">
+  <div class="container-fluid text-center">
     <div class="row">
-      <!-- ASIDE -->
-      <div class="col-md-2 d-none d-md-block bg-dark sidebar">
-       <app-channels></app-channels>
+      <div class="col-2 bg-dark">
+        <button
+        class="btn btn-outline-primary text-light mt-4 pt-1"
+        (click)="creerChannel()"
+      >
+        Créer un Channel
+      </button>
       </div>
-  
-      <!-- MAIN -->
-      <div class="col-md-9 ml-sm-auto col-lg-10 mt-5 mb-5">
-        <div class="row row-cols-6 g-1 p-2 mt-2">
-          <app-messages> </app-messages>
-          <!--On appel le component product qui se trouve dans product-component.ts-->
-        </div>
+      <div class="col-10 bg-dark">
+        <div class="g-1 p-2 mb-3">
+          <div class="mt-3">
+            <form
+              class="input-group m-2"
+              id="messageForm"
+              (submit)="getNewMessage()"
+            >
+              <span class="bg-dark text-primary input-group-text"
+              style="--bs-bg-opacity: .5;"
 
-        <div class="newMessage">
-          <form id="messageForm" (submit)="getNewMessage()">
-            <label>New Message</label>
-            <textarea name="newMessage"  cols="30" rows="10"  [(ngModel)]="messageContent"></textarea>
-            <button class="btn-warning" type="submit"  >Ajouter un Message</button>
-          </form>
+                >Saisir votre message : </span
+              >
+              <textarea
+                class="form-control bg-primary text-light"
+                style="--bs-bg-opacity: .80;"
+                aria-label="With textarea"
+                name="newMessage"
+                [(ngModel)]="messageContent"
+              ></textarea>
+              <span class="bg-dark input-group-text">
+                <button
+                  class="btn btn-outline-light bg-primary text-dark"
+                  type="submit"
+                >
+                  Ajouter un message
+                </button></span
+              >
+            </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- <app-footer></app-footer> -->
+</div>
